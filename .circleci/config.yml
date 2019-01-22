@@ -6,11 +6,11 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: {{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
       - save_cache:
-          key: {{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --no-watch --no-progress 
+      - run: npm run test -- --no-watch --no-progress
       - run: npm run e2e
