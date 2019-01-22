@@ -1,2 +1,2 @@
-# angular_ci
-this repo is only for testing
+# angularTesting
+This project is made to test angular project
